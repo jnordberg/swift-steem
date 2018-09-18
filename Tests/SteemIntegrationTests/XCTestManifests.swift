@@ -3,8 +3,14 @@ import XCTest
 extension ClientTest {
     static let __allTests = [
         ("testBroadcast", testBroadcast),
+        ("testFeedHistory", testFeedHistory),
+        ("testGetAccount", testGetAccount),
+        ("testGetAccountHistory", testGetAccountHistory),
+        ("testGetAccountHistoryVirtual", testGetAccountHistoryVirtual),
         ("testGetBlock", testGetBlock),
+        ("testGetOrderBook", testGetOrderBook),
         ("testGlobalProps", testGlobalProps),
+        ("testNani", testNani),
         ("testRequest", testRequest),
     ]
 }

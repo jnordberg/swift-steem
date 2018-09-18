@@ -4,6 +4,8 @@ extension AssetTest {
     static let __allTests = [
         ("testDecodable", testDecodable),
         ("testEncodable", testEncodable),
+        ("testEquateable", testEquateable),
+        ("testProperties", testProperties),
     ]
 }
 
@@ -35,6 +37,7 @@ extension OperationTest {
     static let __allTests = [
         ("testDecodable", testDecodable),
         ("testEncodable", testEncodable),
+        ("testVirtual", testVirtual),
     ]
 }
 
