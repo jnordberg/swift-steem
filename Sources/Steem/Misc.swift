@@ -64,3 +64,31 @@ fileprivate func decodeMeta(_ value: String) -> [String: Any]? {
     let decoded = try? JSONSerialization.jsonObject(with: data, options: [])
     return decoded as? [String: Any]
 }
+
+/// UInt64 wrapper that matches FCs behaviour where values larger than 0xffffffff serializes as strings.
+public struct SteemUInt64: Codable {
+    /// The 64-bit unsigned integer.
+    public let value: UInt64
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        do {
+            value = try container.decode(UInt64.self)
+        } catch {
+            if let value = UInt64(try container.decode(String.self)) {
+                self.value = value
+            } else {
+                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid integer")
+            }
+        }
+    }
+    
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        if (self.value > 0xffffffff) {
+            try container.encode(self.value.description)
+        } else {
+            try container.encode(self.value)
+        }
+    }
+}
