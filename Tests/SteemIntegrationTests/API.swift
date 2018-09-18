@@ -53,9 +53,9 @@ class ClientTest: XCTestCase {
         client.send(req) { res, error in
             XCTAssertNil(error)
             XCTAssertNotNil(res)
-            XCTAssertEqual(res?.currentMedianHistory, Price(base: Asset(0.878, .sbd), quote: Asset(1.000, .steem)))
-            XCTAssertEqual(res?.priceHistory.first, Price(base: Asset(0.962, .sbd), quote: Asset(1.000, .steem)))
-            XCTAssertEqual(res?.priceHistory.last, Price(base: Asset(0.876, .sbd), quote: Asset(1.000, .steem)))
+            XCTAssertEqual(res?.currentMedianHistory.base.symbol, .sbd)
+            XCTAssertEqual(res?.priceHistory.first?.quote, Asset(1.000, .steem))
+            XCTAssertEqual(res?.priceHistory.last?.quote, Asset(1.000, .steem))
             test.fulfill()
         }
         waitForExpectations(timeout: 5) { error in
