@@ -1,5 +1,5 @@
 /// Steem-flavoured JSON-RPC 2.0 client.
-/// - Author: Johan Nordberg <johan@steemit.com>
+/// - Author: Johan Nordberg <code@johan-nordberg.com>
 
 import AnyCodable
 import Foundation

@@ -11,11 +11,8 @@ docs: Steem.xcodeproj $(SRC_FILES) README.md
 		--module Steem \
 		--hide-documentation-coverage \
 		--undocumented-text "" \
-		--docset-icon ~/Desktop/steem.svg \
 		-x -scheme,Steem-Package,-target,Steem \
-		-g https://github.com/steemit/swift-steem \
-		-a "Steemit Inc." \
-		-u https://steem.com \
+		-g https://github.com/jnordberg/swift-steem \
 		&& touch docs
 
 .PHONY: format

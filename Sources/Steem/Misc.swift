@@ -1,5 +1,5 @@
 /// Misc Steem protocol types.
-/// - Author: Johan Nordberg <johan@steemit.com>
+/// - Author: Johan Nordberg <code@johan-nordberg.com>
 
 import Foundation
 
@@ -69,11 +69,11 @@ fileprivate func decodeMeta(_ value: String) -> [String: Any]? {
 public struct SteemUInt64: Codable {
     /// The 64-bit unsigned integer.
     public let value: UInt64
-    
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         do {
-            value = try container.decode(UInt64.self)
+            self.value = try container.decode(UInt64.self)
         } catch {
             if let value = UInt64(try container.decode(String.self)) {
                 self.value = value
@@ -82,10 +82,10 @@ public struct SteemUInt64: Codable {
             }
         }
     }
-    
+
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
-        if (self.value > 0xffffffff) {
+        if self.value > 0xFFFF_FFFF {
             try container.encode(self.value.description)
         } else {
             try container.encode(self.value)

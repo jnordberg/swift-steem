@@ -2,12 +2,12 @@
 swift-steem
 ===========
 
-Official Steem library for Swift.
+Steem blockchain library for Swift.
 
 Resources:
 
-  * [API documentation](https://steemit.github.io/swift-steem/)
-  * [Issue tracker](https://github.com/steemit/swift-steem/issues)
+  * [API documentation](https://jnordberg.github.io/swift-steem/)
+  * [Issue tracker](https://github.com/jnordberg/swift-steem/issues)
   * [Steem developer portal](https://developers.steem.io)
 
 
@@ -20,7 +20,7 @@ In your Package.swift add:
 
 ```
 dependencies: [
-    .package(url: "https://github.com/steemit/swift-steem.git", .branch("master"))
+    .package(url: "https://github.com/jnordberg/swift-steem.git", .branch("master"))
 ]
 ```
 

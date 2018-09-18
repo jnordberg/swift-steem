@@ -1,5 +1,5 @@
 /// Swift libsecp256k1 bindings
-/// - Author: Johan Nordberg <johan@steemit.com>
+/// - Author: Johan Nordberg <code@johan-nordberg.com>
 
 import Foundation
 import secp256k1

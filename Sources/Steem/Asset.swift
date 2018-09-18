@@ -1,5 +1,5 @@
 /// Steem token types.
-/// - Author: Johan Nordberg <johan@steemit.com>
+/// - Author: Johan Nordberg <code@johan-nordberg.com>
 /// - Author: Iain Maitland <imaitland@steemit.com>
 
 import Foundation

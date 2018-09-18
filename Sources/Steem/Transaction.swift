@@ -1,5 +1,5 @@
 /// Steem transaction type.
-/// - Author: Johan Nordberg <johan@steemit.com>
+/// - Author: Johan Nordberg <code@johan-nordberg.com>
 
 import AnyCodable
 import Foundation

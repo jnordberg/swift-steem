@@ -1,6 +1,6 @@
 /**
  Base58 parser and encoder.
- - author: Johan Nordberg <johan@steemit.com>
+ - author: Johan Nordberg <code@johan-nordberg.com>
  */
 
 import Crypto

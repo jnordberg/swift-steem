@@ -1,5 +1,5 @@
 /// Steem operation types.
-/// - Author: Johan Nordberg <johan@steemit.com>
+/// - Author: Johan Nordberg <code@johan-nordberg.com>
 
 import Foundation
 
