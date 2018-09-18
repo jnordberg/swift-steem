@@ -322,9 +322,7 @@ extension Client {
         let decoder = Foundation.JSONDecoder()
         decoder.dataDecodingStrategy = dataDecoder
         decoder.dateDecodingStrategy = dateDecoder
-        #if !os(Linux)
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-        #endif
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }
 
@@ -333,22 +331,7 @@ extension Client {
         let encoder = Foundation.JSONEncoder()
         encoder.dataEncodingStrategy = dataEncoder
         encoder.dateEncodingStrategy = dateEncoder
-        #if !os(Linux)
-            encoder.keyEncodingStrategy = .convertToSnakeCase
-        #endif
+        encoder.keyEncodingStrategy = .convertToSnakeCase
         return encoder
     }
 }
-
-#if os(Linux)
-    fileprivate let WARNING = print(
-        """
-            WARNING: Swift 4.1 on Linux is missing the snake case decoding JSON strategies.
-                     Some API request may fail until this is fixed or a workaround can be found.
-
-                     More info:
-                     https://bugs.swift.org/browse/SR-7180
-
-        """
-    )
-#endif
